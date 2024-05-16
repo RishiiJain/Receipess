@@ -52,9 +52,10 @@ header {
 }
 .top-area nav .top-left {
     font-size: 30px;
+    color: #7B5536;
+    font-weight: 600;
     padding: 0;
 }
-
 .top-area ul li {
     display: inline;
     margin-right: 20px;
@@ -149,9 +150,14 @@ nav ul li a:active{
     background-color: #7B5536;
     color: #fff;
     padding: 4px 10px;
-    border: none;
+    border: solid #fff 1px;
     border-radius: 2px;
     text-align: left;
+}
+#product .pg1 .description button:hover{
+    background-color: #fff;
+    border: solid #7B5536 1px;
+    color: #7B5536;
 }
 #product .pg1 .description span{
     background-color: rgb(36, 117, 36);

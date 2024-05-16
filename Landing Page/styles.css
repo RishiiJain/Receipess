@@ -52,6 +52,8 @@ header {
 }
 .top-area nav .top-left {
     font-size: 30px;
+    color: #7B5536;
+    font-weight: 600;
     padding: 0;
 }
 
@@ -83,6 +85,7 @@ nav ul li a:active{
 
 /* search bar */
 .search-form { 
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     max-width: 25%;
