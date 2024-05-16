@@ -49,28 +49,31 @@ header {
     align-items: center;
     justify-content: space-around;
     padding: 15px 50px;
+    background-color: #7B5536;
 }
 .top-area nav .top-left {
     font-size: 30px;
     padding: 0;
+    color: #fff;
 }
 
 .top-area ul li {
     display: inline;
     margin-right: 20px;
     font-weight: 520;
+    color: #fff;
 }
 /* home/browse/about/contact */
 nav ul li a {
     padding: 5px 15px;
     font-size: 20px;
-    color: #7B5536;
+    color: #fff;
     text-decoration: none;
     margin-right: 0;
     border-radius: 3px;
 }
 nav ul li a:hover {
-    background-color: #fff;
+    background-color: #555;
     color: #f84d83;
 }
 nav ul li a:active{
@@ -80,11 +83,14 @@ nav ul li a:active{
     background: #f84d83;
     position: absolute;
 } */
-
+hr{
+    padding: 30px;
+    margin: auto;
+}
 /* search bar */
 .search-form { 
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    margin-top: 20px;
     max-width: 25%;
     display: flex;
     justify-content: center;
@@ -147,6 +153,7 @@ main {
 
 /* Modal styles */
 .modal {
+    padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -157,21 +164,32 @@ main {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow-y: auto;
 }
 
 .modal-content {
     background-color: #fff;
-    padding: 20px;
+    padding: 2rem;
+    margin:auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 80%;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: auto;
 }
-
+.modal-content li {
+    padding-left: 2rem;
+}
 .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+    font-size: 20px;
+    color:#fff;
+    padding: 10px;
+    background-color: #7B5536;
 }
 
 /* Detailed view styles will be added dynamically */
