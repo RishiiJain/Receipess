@@ -1,36 +1,64 @@
-.box-container {
-    border: 1px solid #450309;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 300px;
+/* Basic styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Century Gothic", 'Lato', sans-serif;
+
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #7B5536;
+    text-align: center;
+}
+h2{
+    font-size: 45px;
+    line-height: 52px;
+    color: #7B5536;
+}
+h4{
+    font-size: 20px;
+    color: #7B5536;
+}
+p{
+    font-size: 16px;
+    color: #7B5536;
+    margin: 15px 20px;
+    text-align: center;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1{
+    padding: 40px 0px;
+}
+body {
+    width: 100%;
 }
 
-.box-container image{
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.box-container {
-    font-size: 14px;
+header {
+    background-color: #7B5536;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
 }
 
 .top-area nav {
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin: 0;
-    padding: 0;
+    padding: 15px 50px;
 }
 .top-area nav .top-left {
     font-size: 30px;
-    padding: 5px;
+    padding: 0;
 }
 
 .top-area ul li {
     display: inline;
     margin-right: 20px;
-    
+    font-weight: 520;
 }
 /* home/browse/about/contact */
 nav ul li a {
@@ -42,69 +70,140 @@ nav ul li a {
     border-radius: 3px;
 }
 nav ul li a:hover {
-    border: solid #7B5536 1px;
-    border-radius: 3px;
     background-color: #fff;
-    color: #7B5536;
+    color: #f84d83;
+}
+nav ul li a:active{
+    color: #f84d83;
+}
+/* nav ul li a:active {
+    background: #f84d83;
+    position: absolute;
+} */
+
+/* browse */
+.browse-top {
+    background-image: url('https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    background-color: #7B5536;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
+.browse-top h1{
+    color: #7B5536;
+    background-color: #fae5d3;
+    opacity: 2;
+    padding: 10px 20px;
+}
+.browse-top p{
+    color: #7B5536;
+    background-color: #fae5d3;
+    padding: 10px 20px;
+}
 
-main {
-    padding: 20px;
+#product .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
 }
 
-.recipe-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: calc(33.33% - 20px);;
+#product{
+    text-align: center;
 }
-
-.recipe-card img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+#product .pg1{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    border: solid #cce7d0 1px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.2s ease;
+    margin: 15px 0px;
+    position: relative;
 }
-
-.recipe-card h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+#product .pg1:hover{
+    box-shadow: 1px 1px 10px #7B5536;
 }
-
-.recipe-details {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Modal styles */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+#product .pg1 img{
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+#product .pg1 .description{
+    text-align: start;
+}
+#product .pg1 .description .btn-area {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    justify-content: space-between;
 }
-
-.modal-content {
+#product .pg1 .description button{
+    font-size: 20px;
+    background-color: #7B5536;
+    color: #fff;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 2px;
+    text-align: left;
+}
+#product .pg1 .description span{
+    background-color: rgb(36, 117, 36);
+    font-size: 14px;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: none;
+}
+#product .pg1 .description i{
+    color: rgb(243, 182, 45);
+}
+#product .pg1 .description h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #7B5536;
+    padding: 8px 0px;
+}
+#product .pg1 .fav{
+    color: #7B5536;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 80%;
-}
-
-.close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
+}
+#product .pg1 .fav:hover{
+    color: #f00;
+}
+
+/* ************** Pagination **************** */
+#pageNo{
+    text-align: center;
+}
+#pageNo a{
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #7B5536;
+    font-weight: 600;
+}
+#pageNo span{
+    background-color: #fff;
+    color: #7B5536;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
 }
