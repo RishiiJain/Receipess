@@ -1,7 +1,11 @@
 // Fetch recipe data from the backend or API
 const recipes = [
-    {id:1, name: 'Spaghetti Carbonara', img: 'spaghetti.jpg', cookingTime: '30 mins', ingredients: ['spaghetti', 'eggs', 'bacon', 'Parmesan cheese'] },
-    {id:2, name: 'Vegetable Stir-Fry', img: 'stir-fry.jpg', cookingTime: '20 mins', ingredients: ['mixed vegetables', 'soy sauce', 'garlic', 'ginger'] },
+    {id:1, name: 'Spaghetti Carbonara', img: 'spaghetti.jpg', cookingTime: '30 mins', ingredients: ['Spaghetti', 'Eggs', 'Bacon', 'Parmesan Cheese'] ,
+    details: ['Boil water in a large saucepan.', 'Chop pancetta finely, grate pecorino and parmesan cheese, and mix them together.', 'Beat eggs in a bowl, season with black pepper, and set aside.','Add salt to boiling water, cook spaghetti until al dente.','Bruise garlic cloves and fry them with pancetta in melted butter until golden and crisp.','Remove garlic, keep pancetta warm on low heat.','Transfer cooked spaghetti to the pancetta pan, add a bit of pasta water.','Mix most of the cheese with beaten eggs, leaving some for later.','Off the heat, pour egg-cheese mixture over spaghetti, toss quickly to coat.','Add pasta water to keep it moist, season if needed.','Serve immediately with remaining cheese and black pepper.','If dry, add more pasta water to revive sauciness.']
+    },
+    {id:2, name: 'Vegetable Stir-Fry', img: 'stir-fry.jpg', cookingTime: '20 mins', ingredients: ['Mixed Vegetables', 'Soy Sauce', 'Garlic', 'Ginger'],
+    details: ['Heat oil in a wok or large skillet over medium-high heat.', 'Add garlic and ginger; cook until fragrant, about 30 seconds.', 'Add vegetables and stir-fry until tender-crisp, 3 to 5 minutes.' ,'Stir in soy sauce and cook until heated through, about 1 minute more.', 'Serve immediately.']
+    },
     // Add more recipes here
 ];
 
@@ -30,6 +34,7 @@ function createRecipeCard(recipe) {
     const card = document.createElement('div');
     card.classList.add('recipe-card');
     card.setAttribute('data-name', recipe.name);
+
     const img = document.createElement('img');
     img.src = `/Images/${recipe.img}`;
     img.alt = recipe.name;
@@ -68,19 +73,29 @@ function showDetailedView(recipe) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>${recipe.name}</h2>
-            <p><strong>Cooking Time:</strong> ${recipe.cookingTime}</p>
-            <p><strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}</p>
-        </div>
+     <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>${recipe.name}</h2>
+        <p><strong>Cooking Time:</strong> ${recipe.cookingTime}</p>
+        <p><strong>Ingredients:</strong></p>
+        <ul>
+            ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+        </ul>
+        <p><strong>Details:</strong></p>
+        <ol>
+            ${recipe.details.map(detail => `<li>${detail}</li>`).join('')}
+        </ol>
+    </div>
     `;
     const closeButton = modal.querySelector('.close-btn');
     closeButton.addEventListener('click', () => {
         document.body.removeChild(modal);
+        document.body.style.overflow = '';
     });
     document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
 }
+
 // Function to toggle favorite status of a recipe
 function toggleFavorite(recipe) {
     const index = recipes.findIndex(item => item.name === recipe.name);
