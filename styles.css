@@ -75,7 +75,6 @@ nav ul li a {
     border-radius: 3px;
 }
 nav ul li a:hover {
-    background-color: #555;
     color: #f84d83;
 }
 nav ul li a:active{
@@ -90,7 +89,7 @@ hr{
     margin: auto;
 }
 /* search bar */
-.search-form { 
+.search-btn { 
     margin: auto;
     margin-top: 20px;
     max-width: 25%;
@@ -102,7 +101,7 @@ hr{
     padding: 5px;
 }
 
-.search-form input[type="text"] {
+.search-btn input[type="text"] {
     flex: 1; /* Take up remaining space */
     padding: 10px;
     color: #7B5536;
@@ -112,7 +111,7 @@ hr{
     outline: none; /* Remove default input focus outline */
 }
 
-.search-form button {
+.search-btn button {
     padding: 10px 20px;
     font-size: 20px;
     border: none;

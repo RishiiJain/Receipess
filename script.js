@@ -8,7 +8,29 @@ const recipes = [
     },
     // Add more recipes here
 ];
+const fetchRecipes = async () => {
+    try {
+        const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken'); // Example API endpoint
+        const data = await response.json();
+        
+        data.meals.forEach(meal => {
+            recipes.push({
+                id: meal.idMeal,
+                name: meal.strMeal,
+                img: meal.strMealThumb,
+                cookingTime: 'N/A', // Assuming the API doesn't provide this, you may want to calculate it or leave it blank.
+                ingredients: [meal.strIngredient1, meal.strIngredient2, meal.strIngredient3, meal.strIngredient4], // You can loop through and collect all ingredients if needed
+                details: [meal.strInstructions] // Instructions for the recipe
+            });
+        });
+        
+        console.log('Recipes after API fetch:', recipes);
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+    }
+};
 
+fetchRecipes();
 //Display recipe cards on page load
 window.onload = function() {
     const main = document.querySelector('main');
@@ -73,8 +95,11 @@ function showDetailedView(recipe) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
-     <div class="modal-content">
-        <span class="close-btn">&times;</span>
+     <div class="modal-content" style="background-color: #fff; padding: 35px; border-radius: 10px; position: relative; ">
+    <div>
+        <span class="close-btn" style="font-size: 20px; font-weight: bold; cursor: pointer; position: absolute; top: 10px; right: 10px; border-radius: 5px;">&times;</span>
+    </div>
+    <div>
         <h2>${recipe.name}</h2>
         <p><strong>Cooking Time:</strong> ${recipe.cookingTime}</p>
         <p><strong>Ingredients:</strong></p>
@@ -86,6 +111,8 @@ function showDetailedView(recipe) {
             ${recipe.details.map(detail => `<li>${detail}</li>`).join('')}
         </ol>
     </div>
+</div>
+
     `;
     const closeButton = modal.querySelector('.close-btn');
     closeButton.addEventListener('click', () => {

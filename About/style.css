@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Century Gothic", 'Lato', sans-serif;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #7B5536;
+}
+h2{
+    font-size: 45px;
+    line-height: 52px;
+    color: #7B5536;
+}
+h4{
+    font-size: 20px;
+    color: #7B5536;
+}
+p{
+    font-size: 16px;
+    color: #7B5536;
+    margin: 15px 20px;
+}
+body {
+    width: 100%;
+}
+
+header {
+    background-color: #7B5536;
+    color: #fff;
+    padding: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+.top-area nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 50px;
+}
+.top-area nav .top-left {
+    font-size: 30px;
+    color: #7B5536;
+    font-weight: 600;
+    padding: 0;
+}
+.top-area ul li {
+    display: inline;
+    margin-right: 20px;
+    font-weight: 520;
+}
+/* home/browse/about/contact */
+nav ul li a {
+    padding: 5px 15px;
+    font-size: 20px;
+    /* font-weight: 700; */
+    color: #7B5536;
+    text-decoration: none;
+    margin-right: 0;
+    border-radius: 3px;
+}
+nav ul li a:hover {
+    background-color: #fff;
+    color: #f84d83;
+}
+nav ul li a:active{
+    color: #f84d83;
+}
+/* nav ul li a:active {
+    background: #f84d83;
+    position: absolute;
+} */
+
+hr{
+    padding: 30px;
+    margin: auto;
+}
+
+.about{
+    background: url(/Images/aboutFood.jpg) no-repeat right;
+    background-color: #7B5536;
+    background-size: 100%;
+    /* background-color: #fdfdfd; */
+    overflow: hidden;
+    padding: 100px 0;
+}
+.inner-section{
+    width: 50%;
+    float: left;
+    background-color: #fdfdfd;
+    padding: 47px;
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.3);
+}
+.inner-section h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #7B5536;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+/* Social Media Icons */
+.skills {
+    text-align: center; /* Center the icons */
+    margin-top: 1rem;
+}
+
+.skills a {
+    display: inline-block;
+    margin: 0 10px; /* Space between icons */
+    font-size: 2rem; /* Size of the icons */
+    color: #fff; /* Default color */
+    border: 1px solid #7B5536;
+    /* padding: 2px 5px; */
+    width: 3rem;
+    border-radius: 0.2rem;
+    background-color: #7B5536;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.skills a:hover {
+    color: #f84d83; /* Hover color */
+    transform: scale(1.1); /* Slightly increase icon size on hover */
+}
+
+.skills i {
+    font-size: 2rem; /* Size of the icons */
+}
+
+@media screen and (max-width: 1000px) {
+    .skills a {
+        font-size: 1.5rem; /* Smaller icons on medium screens */
+        margin: 0 8px; /* Adjust space for medium screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .skills a {
+        font-size: 1.2rem; /* Even smaller icons on small screens */
+        margin: 0 5px; /* Adjust space for small screens */
+    }
+}
